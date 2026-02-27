@@ -1,0 +1,227 @@
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f2ede4; /* Cor bege do fundo do design */
+    font-family: 'Poppins', sans-serif;
+    color: #1a2a3a; /* Azul escuro do texto */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Ajuste no Header para não cortar a onda */
+.main-header {
+    position: relative;
+    background-color: #233f47;
+    padding: 10px 0; /* Aumentei o padding inferior para dar respiro antes da onda */
+    overflow: visible; /* IMPORTANTE: mude de hidden para visible para a onda aparecer */
+}
+
+/* Garante que o texto e o garfo fiquem sempre acima da onda */
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 5;
+}
+
+.container-oculta-garfo {
+    position: relative;
+    width: 100%;
+    height: 30px; /* Ajuste conforme necessário para ocultar a parte inferior do garfo */
+    background-color: #f2ede4; /* Mesma cor do header para criar a ilusão de que o garfo está saindo do header */
+    z-index: 10; /* Menor que o header-content para ficar atrás do garfo */
+}
+
+.logo {
+    width: 150px; /* Ajuste conforme o tamanho do seu arquivo */
+}
+
+.cta-area {
+    position: relative;
+}
+
+.main-title {
+    font-family: 'Zizo', sans-serif;
+    font-size: 3rem;
+    color: #fff;
+    text-transform: uppercase;
+    line-height: 1.1;
+    letter-spacing: 2px;
+}
+
+.subtitle-header {
+    color: #7c98a1;
+    font-style: italic;
+    text-transform: lowercase;
+    font-weight: 400;
+}
+
+/* O Garfo flutuante */
+.floating-fork {
+    width: 180px; /* Ajuste conforme necessário */
+    transform: rotate(10deg); /* Pequena inclinação para dar charme */
+    margin-bottom: -60px;
+}
+
+
+
+/* --- SEÇÃO SOBRE --- */
+.about-section {
+    padding: 60px 0 100px 0;
+    background-color: #f2ede4;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    align-items: center;
+}
+
+/* --- CARROSSEL SANGRIA TOTAL --- */
+.carousel {
+  margin: 0 auto;
+    padding: 20px 0;
+    max-width: 700px;
+    overflow: hidden;
+    display: flex;
+}
+
+.group {
+    display: flex;
+    gap: 100px; /* Espaço entre os pratos conforme o design */
+    padding-right: 100px;
+    will-change: transform;
+    animation: scrolling 30s linear infinite;
+}
+
+.card {
+    flex-shrink: 0;
+    width: 260px; 
+    height: 260px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+@keyframes scrolling {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+/* --- CARD DA FAMÍLIA (VERSÃO CLARA) --- */
+.family-card {
+    display: flex;
+    align-items: stretch;
+    background-color: #ffffff; /* Fundo branco ou um bege bem clarinho para destacar do fundo da página */
+    border-radius: 40px; /* Cantos um pouco mais arredondados para um ar mais moderno */
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(35, 63, 71, 0.08); /* Sombra suave usando o tom do header */
+    width: 100%;
+    max-width: 1150px;
+}
+
+/* Lado Esquerdo: Texto */
+.info-side {
+    flex: 1;
+    padding: 70px; /* Mais respiro para o texto */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #233f47; /* Texto agora usa a cor do Header */
+    position: relative;
+}
+
+.section-title {
+    font-family: 'Zizo', sans-serif;
+    font-size: 3.8rem; /* Ligeiramente maior para impacto */
+    line-height: 0.9;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    color: #233f47;
+}
+
+.section-title .highlight {
+    font-size: 1.8rem;
+    display: block;
+    color: #7c98a1; /* Mesma cor usada no subtítulo do header */
+    letter-spacing: 1px;
+    font-weight: 400;
+}
+
+.text-content p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    font-weight: 400;
+    color: #4a5a5e; /* Um tom levemente mais suave para o parágrafo */
+}
+
+/* Lado Direito: Imagem */
+.image-side {
+    flex: 1.3; /* Imagem um pouco maior para equilibrar o layout claro */
+    min-height: 500px;
+}
+
+.family-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    /* Adiciona um leve zoom ou ajuste se necessário */
+}
+
+/* Círculos decorativos - Agora em tom sutil de azul */
+.decor-circles {
+    position: absolute;
+    bottom: -50px;
+    right: -50px;
+    width: 180px;
+    height: 180px;
+    border: 2px solid rgba(35, 63, 71, 0.05); /* Azul bem clarinho */
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+ .family-card {
+        flex-direction: column;
+        border-radius: 25px;
+        margin: 0 10px;
+    }
+    .image-side {
+        min-height: 350px;
+        order: 1;
+    }
+    .info-side {
+        padding: 40px 30px;
+        order: 2;
+        text-align: center;
+    }
+    .section-title {
+        font-size: 3rem;
+    }
+    .group {
+        gap: 50px;
+    }
+    .card {
+        width: 180px;
+        height: 180px;
+    }
+}
