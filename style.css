@@ -77,7 +77,7 @@ body {
 
 /* --- SEÇÃO SOBRE --- */
 .about-section {
-    padding: 60px 0 100px 0;
+    padding: 60px 0 0 0;
     background-color: #f2ede4;
 }
 
@@ -198,6 +198,615 @@ body {
     pointer-events: none;
 }
 
+
+.history-section {
+    background-color: #f2ede4;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+/* --- ESTILO DO BLOCO 1999 COM BG --- */
+.history-intro {
+    position: relative;
+    padding-bottom: 60px;
+    height: auto;
+    text-align: center;
+}
+
+.bg-compass {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px; /* Tamanho da rosa dos ventos */
+    height: auto;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.bg-compass img {
+    width: 100%;
+}
+
+.intro-content {
+    position: relative;
+    z-index: 2;
+}
+
+.history-year {
+    font-family: 'Zizo', sans-serif;
+    font-size: 1.2rem;
+    color: #233f47;
+    line-height: 1;
+}
+
+.history-year span {
+    font-size: 4.5rem;
+    display: block;
+    margin-top: 10px;
+}
+
+.history-main-text {
+    max-width: 650px;
+    margin: 30px auto 0;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #4a5a5e;
+}
+
+/* Container que engloba os dois blocos */
+.legacy-container {
+    display: flex;
+    flex-direction: row; /* Lado a lado no desktop */
+    justify-content: center;
+    align-items: center;
+    gap: 50px; /* Ajustado de 15rem para 50px para não vazar da tela */
+    width: 100%;
+    max-width: 1300px; /* Um pouco maior para caber os dois */
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Bloco "Desde 1999" */
+.history-intro {
+    flex: 0.8; /* Ocupa um pouco menos de espaço que o card */
+    position: relative;
+    text-align: center;
+}
+
+.bg-compass {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px; /* Rosa dos ventos um pouco menor para o row */
+    opacity: 1;
+    z-index: 1;
+}
+
+.intro-content {
+    position: relative;
+    z-index: 2;
+}
+
+.history-year {
+    font-family: 'Zizo', sans-serif;
+    color: #233f47;
+}
+
+.history-year span {
+    font-size: 4rem;
+    line-height: 1;
+}
+
+.history-main-text {
+    font-size: 1.1rem;
+    color: #4a5a5e;
+    margin-top: 15px;
+    line-height: 1.5;
+}
+
+/* Card da Dona Cida */
+.legacy-layout {
+    flex: 1.2; /* Ocupa mais espaço que o texto da esquerda */
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    background-color: #233f47;
+    padding: 40px;
+    border-radius: 40px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    position: relative;
+}
+
+.legacy-image-wrapper {
+    flex: 1;
+    position: relative;
+}
+
+.cida-img {
+    width: 100%;
+    border-radius: 20px;
+    background-color: #f2ede4;
+}
+
+.name-badge {
+    position: absolute;
+    bottom: -10px;
+    left: -10px;
+    background-color: #f2ede4;
+    color: #233f47;
+    padding: 10px 20px;
+    font-family: 'Zizo', sans-serif;
+    font-size: 1.3rem;
+    border-radius: 8px;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+}
+
+.legacy-info {
+    flex: 1.5;
+    color: #ffffff;
+}
+
+.legacy-info p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.location-section {
+    padding: 80px 0;
+    background-color: #f2ede4; /* Mantendo o bege padrão */
+}
+
+.location-container {
+    display: flex;
+    flex-direction: row; /* Lado a lado sempre, conforme solicitado */
+    gap: 30px;
+    align-items: stretch;
+    justify-content: center;
+}
+
+.map-box, .parking-box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.location-title {
+    font-family: 'Zizo', sans-serif;
+    font-size: 1.8rem;
+    color: #233f47;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.location-title span {
+    display: block;
+    font-size: 1rem;
+    color: #7c98a1;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Moldura do Mapa */
+.map-wrapper {
+    width: 100%;
+    height: 100%;
+    min-height: 350px;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.map-wrapper iframe {
+    width: 100%;
+    height: 100%;
+}
+
+/* Moldura do Estacionamento */
+.parking-card {
+    width: 100%;
+    height: 100%;
+    min-height: 350px;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.parking-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que a imagem preencha o card sem distorcer */
+}
+
+.reviews-section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.cta-buttons-title {
+    font-family: 'Zizo', sans-serif;
+    color: #233f47;
+    font-size: 2.5rem;
+    margin: 40px 0 20px;
+}
+
+.cta-buttons-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 0 20px;
+}
+
+.cta-btn {
+    background-color: #1a2a30; /* Azul escuro do design */
+    background-image: url('assets/img/noise-texture.png'); /* Se tiver a textura de ruído */
+    border-radius: 15px;
+    padding: 20px 30px;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 280px;
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.cta-btn:hover {
+    transform: translateY(-5px);
+}
+
+.cta-btn .small-text {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    opacity: 0.8;
+    margin-bottom: 5px;
+}
+
+.cta-btn .large-text {
+    font-family: 'Zizo', sans-serif;
+    font-size: 1.8rem;
+    line-height: 1;
+}
+
+/* Cores do Google */
+.google-colors {
+    background: linear-gradient(to right, #4285F4, #EA4335, #FBBC05, #34A853);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Ícones Sociais */
+.social-icons {
+    display: flex;
+    gap: 20px;
+    font-size: 2rem;
+    margin-top: 10px;
+}
+
+.gallery-section {
+    padding: 60px 0;
+    background-color: #f2ede4; /* Fundo bege das imagens anteriores */
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Divide em duas colunas iguais */
+    gap: 30px;
+    align-items: stretch;
+}
+
+/* Container de cada foto */
+.gallery-item {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 100%;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Garante que a foto preencha o espaço sem distorcer */
+    display: block;
+}
+
+/* Coluna da direita: empilha as duas fotos menores */
+.gallery-group-right {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Estilização dos Textos (Churrasco / Ambiente) */
+.label {
+    margin-bottom: 15px;
+}
+
+.label h3 {
+    font-family: 'Zizo', sans-serif;
+    font-size: 2rem;
+    color: #000;
+    line-height: 1;
+}
+
+.label p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    color: #4a5a5e;
+}
+
+.full-buffet-section {
+    padding: 80px 0;
+    background-color: #f2ede4;
+}
+
+.buffet-header {
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.buffet-title {
+    font-family: 'Zizo', sans-serif;
+    font-size: 3.5rem;
+    color: #233f47;
+    margin: 0;
+    line-height: 0.8;
+}
+
+.buffet-subtitle {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    color: #7c98a1;
+    letter-spacing: 5px;
+    margin-top: 10px;
+}
+
+/* Container do Card com Grid */
+.buffet-card-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.buffet-grid-frame {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr; /* Coluna da esquerda maior que a da direita */
+    grid-template-rows: 250px 250px; /* Duas linhas fixas para as fotos laterais */
+    gap: 15px;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 30px;
+    box-shadow: 0 20px 40px rgba(35, 63, 71, 0.1);
+}
+
+.buffet-img-box {
+    overflow: hidden;
+    border-radius: 15px;
+    position: relative;
+}
+
+.buffet-img-box img {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease;
+}
+
+/* Imagem Principal (Ocupa as duas linhas da esquerda) */
+.main {
+    grid-row: 1 / span 2;
+}
+
+/* Efeito de hover em todas as fotos */
+.buffet-img-box:hover img {
+    transform: scale(1.08);
+}
+
+.main-footer {
+    background-color: #1a2a30; /* Azul ainda mais escuro para o rodapé */
+    color: #f2ede4;
+    padding: 80px 0 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 60px;
+    padding-bottom: 60px;
+}
+
+/* Coluna Branding */
+.footer-logo {
+    max-width: 180px;
+    margin-bottom: 20px;
+}
+
+.footer-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    opacity: 0.8;
+    margin-bottom: 25px;
+}
+
+.footer-social {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-social a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f2ede4;
+    transition: all 0.3s ease;
+    font-size: 1.2rem;
+}
+
+.footer-social a:hover {
+    background: #f2ede4;
+    color: #1a2a30;
+    transform: translateY(-3px);
+}
+
+/* Títulos das Colunas */
+.footer-column h3 {
+    font-family: 'Zizo', sans-serif;
+    font-size: 1.4rem;
+    margin-bottom: 25px;
+    letter-spacing: 2px;
+}
+
+/* Links */
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 12px;
+}
+
+.footer-column ul li a {
+    color: #f2ede4;
+    text-decoration: none;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.footer-column ul li a:hover {
+    opacity: 1;
+}
+
+/* Contato */
+.contact p {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    opacity: 0.8;
+}
+
+.contact i {
+    color: #7c98a1;
+}
+
+/* Barra Final */
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.05);
+    padding: 25px 0;
+    text-align: center;
+    font-size: 0.85rem;
+    opacity: 0.5;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 992px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 40px;
+    }
+    
+    .footer-social {
+        justify-content: center;
+    }
+
+    .contact p {
+        justify-content: center;
+    }
+}
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 768px) {
+    .buffet-grid-frame {
+        grid-template-columns: 1fr; /* No mobile, vira uma coluna única */
+        grid-template-rows: 300px 200px 200px;
+        gap: 10px;
+    }
+    
+    .main {
+        grid-row: 1; /* Volta a ocupar apenas uma linha no mobile */
+    }
+    
+    .buffet-title {
+        font-size: 2.8rem;
+    }
+}
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 992px) {
+    .gallery-grid {
+        grid-template-columns: 1fr; /* No mobile, tudo vira uma coluna só */
+    }
+    
+    .gallery-item.large {
+        height: 400px;
+    }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .cta-buttons-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    .cta-btn {
+        width: 100%;
+        max-width: 350px;
+    }
+}
+
+
+/* --- AJUSTE PARA MOBILE (Mantendo Row) --- */
+@media (max-width: 768px) {
+    .location-container {
+        gap: 15px; /* Reduz o espaço para caber os dois */
+        padding: 0 10px;
+    }
+
+    .location-title {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+
+    .map-wrapper, .parking-card {
+        min-height: 200px; /* Reduz a altura para não ocupar a tela toda no mobile */
+        border-radius: 15px;
+    }
+}
+
+/* --- RESPONSIVIDADE (MOBILE) --- */
+@media (max-width: 1100px) {
+    .legacy-container {
+        flex-direction: column; /* Empilha no tablet/mobile */
+        gap: 60px;
+        text-align: center;
+    }
+
+    .history-intro, .legacy-layout {
+        flex: none;
+        width: 100%;
+    }
+
+    .legacy-layout {
+        flex-direction: column; /* Imagem em cima do texto dentro do card */
+        padding: 30px;
+    }
+    
+    .legacy-image-wrapper {
+        max-width: 300px;
+    }
+}
+
+
 /* Responsividade */
 @media (max-width: 992px) {
  .family-card {
@@ -224,4 +833,16 @@ body {
         width: 180px;
         height: 180px;
     }
+     .legacy-layout {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+    .name-badge {
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -15px;
+        white-space: nowrap;
+    }
+    .history-year span { font-size: 3.5rem; }
 }
