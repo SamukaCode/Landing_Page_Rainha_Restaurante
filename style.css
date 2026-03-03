@@ -1,71 +1,69 @@
-/* Reset Básico */
+/* ============================================================================
+   RESET E CONFIGURAÇÕES GLOBAIS
+   ============================================================================ */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    position: relative;
+}
+
 body {
-    background-color: #f2ede4; /* Cor bege do fundo do design */
-    font-family: 'Poppins', sans-serif;
-    color: #1a2a3a; /* Azul escuro do texto */
-}
-
-/* Seções em Creme (Contraste Quente) */
-.about-section, 
-.history-section, 
-.reviews-section {
     background-color: #f2ede4;
-}
-
-/* Seções em Branco Gelo (Contraste Limpo) */
-.full-buffet-section, 
-.gallery-section, 
-.location-section {
-    background-color: #f8f9fa;
-    /* Dica: use um padding generoso para o branco "respirar" */
-    padding: 80px 0;
+    font-family: 'Poppins', sans-serif;
+    color: #1a2a3a;
 }
 
 .container {
     width: 100%;
     margin: 0 auto;
     padding: 0 20px;
-    /* No mobile e tablet, ele ocupa quase tudo. No desktop, ele escala: */
-    max-width: 1200px; 
-    transition: max-width 0.3s ease; /* Suaviza a adaptação se redimensionar */
+    max-width: 1200px;
+    transition: max-width 0.3s ease;
 }
 
-/* Telas Grandes (Laptops de 15" e Monitores comuns) */
-@media (min-width: 1400px) {
-    .container, .carousel {
-        max-width: 1320px;
-    }
+/* ============================================================================
+   SEÇÕES - CORES E ESPAÇAMENTO
+   ============================================================================ */
+
+/* Tons de Creme (Acolhedor) */
+.about-section,
+.gallery-section,
+.reviews-section {
+    background-color: #f2ede4;
+    padding: 40px 0;
 }
 
-/* Telas de Alta Resolução (Monitores 2K ou Desktop Largo) */
-@media (min-width: 1600px) {
-    .container, .carousel {
-        max-width: 1500px;
-    }
+/* Tons de Branco Gelo (Limpo/Fresh) */
+.full-buffet-section,
+.history-section,
+.location-section,
+.section-carousel {
+    background-color: #f8f9fa;
+    padding: 40px 0;
 }
 
-/* Opcional: Para um visual "Cinematográfico" em telas gigantes */
-@media (min-width: 1920px) {
-    .container, .carousel {
-        max-width: 1650px;
-    }
+.section-carousel {
+    padding-bottom: 40px;
 }
 
-/* Ajuste no Header para não cortar a onda */
+/* ============================================================================
+   HEADER - MENU SUPERIOR
+   ============================================================================ */
+
 .main-header {
     position: relative;
     background-color: #233f47;
-    padding: 10px 0; /* Aumentei o padding inferior para dar respiro antes da onda */
-    overflow: visible; /* IMPORTANTE: mude de hidden para visible para a onda aparecer */
+    padding: 10px 0;
+    overflow: visible;
 }
 
-/* Garante que o texto e o garfo fiquem sempre acima da onda */
 .header-content {
     display: flex;
     justify-content: space-between;
@@ -77,17 +75,22 @@ body {
 .container-oculta-garfo {
     position: relative;
     width: 100%;
-    height: 30px; /* Ajuste conforme necessário para ocultar a parte inferior do garfo */
-    background-color: #f2ede4; /* Mesma cor do header para criar a ilusão de que o garfo está saindo do header */
-    z-index: 10; /* Menor que o header-content para ficar atrás do garfo */
+    height: 30px;
+    background-color: #f2ede4;
+    z-index: 10;
+}
+
+.logo-area {
+    flex: 0 0 auto;
 }
 
 .logo {
-    width: 150px; /* Ajuste conforme o tamanho do seu arquivo */
+    width: 150px;
 }
 
 .cta-area {
     position: relative;
+    flex: 1;
 }
 
 .main-title {
@@ -107,153 +110,269 @@ body {
     font-weight: 400;
 }
 
-/* O Garfo flutuante */
+.garfo-area {
+    flex: 0 0 auto;
+}
+
 .floating-fork {
-    width: 180px; /* Ajuste conforme necessário */
-    transform: rotate(10deg); /* Pequena inclinação para dar charme */
+    width: 180px;
+    transform: rotate(10deg);
     margin-bottom: -60px;
 }
 
+/* ============================================================================
+   SEÇÃO ABOUT - FAMÍLIA E DESCRIÇÃO
+   ============================================================================ */
 
-
-/* --- SEÇÃO SOBRE --- */
-.about-section {
-    padding: 20px 0;
-}
-
-.about-content {
-    display: flex;
-    flex-direction: column;
-    gap: 80px;
-    align-items: center;
-}
-
-/* --- CARROSSEL SANGRIA TOTAL --- */
-.carousel {
-  margin: 0 auto;
-    padding: 20px 0;
-    max-width: 1200px;
-    overflow: hidden;
-    display: flex;
-}
-
-.group {
-    display: flex;
-    gap: 100px; /* Espaço entre os pratos conforme o design */
-    padding-right: 100px;
-    will-change: transform;
-    animation: scrolling 30s linear infinite;
-}
-
-.card {
-    flex-shrink: 0;
-    width: 260px; 
-    height: 260px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.card img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-@keyframes scrolling {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-100%); }
-}
-/* --- CARD DA FAMÍLIA (VERSÃO CLARA) --- */
 .family-card {
     display: flex;
-    align-items: stretch;
-    background-color: #ffffff; /* Fundo branco ou um bege bem clarinho para destacar do fundo da página */
-    border-radius: 40px; /* Cantos um pouco mais arredondados para um ar mais moderno */
+    background-color: #ffffff;
+    border-radius: 40px;
     overflow: hidden;
-    box-shadow: 0 15px 35px rgba(35, 63, 71, 0.08); /* Sombra suave usando o tom do header */
-    width: 100%;
-    max-width: 1150px;
+    max-width: 1100px;
+    margin: 0 auto;
+    box-shadow: 0 20px 40px rgba(35, 63, 71, 0.05);
 }
 
-/* Lado Esquerdo: Texto */
 .info-side {
     flex: 1;
-    padding: 70px; /* Mais respiro para o texto */
+    padding: 50px 60px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    color: #233f47; /* Texto agora usa a cor do Header */
-    position: relative;
+    gap: 20px;
+}
+
+.badge-tradicao {
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #7c98a1;
 }
 
 .section-title {
     font-family: 'Zizo', sans-serif;
-    font-size: 3.8rem; /* Ligeiramente maior para impacto */
+    font-size: 3.2rem;
+    color: #233f47;
     line-height: 0.9;
-    margin-bottom: 25px;
-    text-transform: uppercase;
+    margin: 0;
+}
+
+.highlight {
     color: #233f47;
 }
 
-.section-title .highlight {
-    font-size: 1.8rem;
-    display: block;
-    color: #7c98a1; /* Mesma cor usada no subtítulo do header */
-    letter-spacing: 1px;
-    font-weight: 400;
-}
-
 .text-content p {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.1rem;
-    line-height: 1.7;
-    font-weight: 400;
-    color: #4a5a5e; /* Um tom levemente mais suave para o parágrafo */
+    max-width: 380px;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin: 0;
 }
 
-/* Lado Direito: Imagem */
+.about-cta {
+    display: flex;
+    align-items: center;
+}
+
+.btn-compact {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #233f47;
+    color: #f2ede4;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.btn-compact:hover {
+    background-color: #020f22;
+    color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(2, 15, 34, 0.2);
+}
+
 .image-side {
-    flex: 1.3; /* Imagem um pouco maior para equilibrar o layout claro */
-    min-height: 500px;
+    flex: 1;
+    min-height: 450px;
 }
 
 .family-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
-    /* Adiciona um leve zoom ou ajuste se necessário */
 }
 
-/* Círculos decorativos - Agora em tom sutil de azul */
-.decor-circles {
-    position: absolute;
-    bottom: -50px;
-    right: -50px;
-    width: 180px;
-    height: 180px;
-    border: 2px solid rgba(35, 63, 71, 0.05); /* Azul bem clarinho */
-    border-radius: 50%;
-    pointer-events: none;
+/* ============================================================================
+   SEÇÃO BUFFET - GRID DE IMAGENS
+   ============================================================================ */
+
+.buffet-header {
+    margin-bottom: 25px;
+    text-align: center;
 }
 
+.buffet-title {
+    font-family: 'Zizo', sans-serif;
+    font-size: 3.5rem;
+    color: #233f47;
+    margin: 0;
+    line-height: 0.8;
+}
 
-.history-section {
+.buffet-subtitle {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    color: #7c98a1;
+    letter-spacing: 5px;
+    margin-top: 10px;
+}
+
+.buffet-card-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.buffet-grid-frame {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-rows: 250px 250px;
+    gap: 15px;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 30px;
+    box-shadow: 0 20px 40px rgba(35, 63, 71, 0.1);
+}
+
+.buffet-img-box {
+    overflow: hidden;
+    border-radius: 15px;
+    position: relative;
+}
+
+.buffet-img-box img {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease;
+}
+
+.buffet-img-box.main {
+    grid-row: 1 / span 2;
+}
+
+.buffet-img-box:hover img {
+    transform: scale(1.08);
+}
+
+/* ============================================================================
+   SEÇÃO GALERIA - CARDS COM IMAGENS
+   ============================================================================ */
+
+.gallery-grid {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
     align-items: center;
 }
 
+.gallery-card {
+    display: flex;
+    flex-direction: column;
+}
 
+.gallery-card.large {
+    max-width: 500px;
+}
+
+.gallery-card.small {
+    max-width: 350px;
+}
+
+.gallery-info {
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.gallery-info h3 {
+    font-family: 'Zizo', sans-serif;
+    font-size: 2.2rem;
+    color: #233f47;
+    margin: 0;
+}
+
+.gallery-info p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    color: #7c98a1;
+    margin: 5px 0 0;
+}
+
+.gallery-image {
+    position: relative;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    background-color: #233f47;
+}
+
+.gallery-image img {
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.gallery-card:hover .gallery-image img {
+    transform: scale(1.08);
+}
+
+.gallery-card:hover .gallery-info {
+    transform: translateX(10px);
+}
+
+.gallery-card:hover h3 {
+    color: #345e69;
+}
+
+.gallery-group-right {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* ============================================================================
+   SEÇÃO HISTÓRIA - DONA CIDA E LEGADO
+   ============================================================================ */
+
+.legacy-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.history-intro {
+    flex: 0.8;
+    position: relative;
+    text-align: center;
+}
 
 .bg-compass {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 600px; /* Tamanho da rosa dos ventos */
-    height: auto;
+    width: 350px;
+    opacity: 1;
     z-index: 1;
     pointer-events: none;
 }
@@ -270,30 +389,19 @@ body {
 .history-year {
     font-family: 'Zizo', sans-serif;
     font-size: 5.2rem;
-    color: #233f47; /* Cor base sólida para o "DESDE" */
-    line-height: 0.8; /* Aproxima o "DESDE" do "1999" para um visual mais moderno */
+    color: #233f47;
+    line-height: 0.8;
 }
 
 .history-year span {
     font-size: 8rem;
     display: block;
     margin-top: 5px;
-    
-    /* Configuração do Gradiente aplicado ao texto */
     background: linear-gradient(135deg, #233f47 0%, #345e69 50%, #233f47 100%);
-    
-    /* Aplicação do efeito de transparência para revelar o fundo */
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    
     font-weight: bold;
-}
-
-/* Ajuste para telas menores */
-@media (max-width: 768px) {
-    .history-year { font-size: 3.5rem; }
-    .history-year span { font-size: 5.5rem; }
 }
 
 .history-main-text {
@@ -305,51 +413,15 @@ body {
     color: #4a5a5e;
 }
 
-/* Container que engloba os dois blocos */
-.legacy-container {
-    display: flex;
-    flex-direction: row; /* Lado a lado no desktop */
-    justify-content: center;
-    align-items: center;
-    gap: 50px; /* Ajustado de 15rem para 50px para não vazar da tela */
-    width: 100%;
-    max-width: 1300px; /* Um pouco maior para caber os dois */
-    margin: 0 auto;
-    padding-top: 80px;
-}
-
-/* Bloco "Desde 1999" */
-.history-intro {
-    flex: 0.8; /* Ocupa um pouco menos de espaço que o card */
-    position: relative;
-    text-align: center;
-}
-
-.bg-compass {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 350px; /* Rosa dos ventos um pouco menor para o row */
-    opacity: 1;
-    z-index: 1;
-}
-
-.intro-content {
-    position: relative;
-    z-index: 2;
-}
-
-/* Card da Dona Cida */
 .legacy-layout {
-    flex: 1.2; /* Ocupa mais espaço que o texto da esquerda */
+    flex: 1.2;
     display: flex;
     align-items: center;
     gap: 40px;
     background-color: #233f47;
     padding: 40px;
     border-radius: 40px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
     position: relative;
 }
 
@@ -361,20 +433,20 @@ body {
 .cida-img {
     width: 100%;
     border-radius: 20px;
-    background-color: #f2ede4;
+    background-color: #f8f9fa;
 }
 
 .name-badge {
     position: absolute;
     bottom: -10px;
     left: -10px;
-    background-color: #f2ede4;
+    background-color: #f8f9fa;
     color: #233f47;
     padding: 10px 20px;
     font-family: 'Zizo', sans-serif;
     font-size: 1.3rem;
     border-radius: 8px;
-    box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 .nome-filhos {
@@ -394,13 +466,166 @@ body {
     margin-bottom: 15px;
 }
 
-.location-section {
-    padding: 60px 0;
+/* ============================================================================
+   SEÇÃO CARROSSEL - ANIMAÇÃO CONTÍNUA
+   ============================================================================ */
+
+.carousel {
+    margin: 0 auto;
+    padding: 20px 0;
+    overflow: hidden;
+    display: flex;
 }
+
+.group {
+    display: flex;
+    gap: 100px;
+    padding-right: 100px;
+    will-change: transform;
+    animation: scrolling 40s linear infinite;
+}
+
+.card {
+    flex-shrink: 0;
+    width: 260px;
+    height: 260px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+@keyframes scrolling {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+/* ============================================================================
+   SEÇÃO REVIEWS - COMENTÁRIOS E CTA
+   ============================================================================ */
+
+.reviews-section {
+    text-align: center;
+}
+
+.reviews-header {
+    margin-bottom: 40px;
+}
+
+.cta-buttons-title {
+    font-family: 'Zizo', sans-serif;
+    color: #1a2a30;
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+}
+
+.reviews-subtitle {
+    font-family: 'Poppins', sans-serif;
+    color: #666;
+    margin-top: -15px;
+    font-size: 1.1rem;
+}
+
+.elfsight-container {
+    margin-bottom: 60px;
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.cta-buttons-grid {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.cta-btn {
+    background: linear-gradient(180deg, #233f47 0%, #020f22 100%);
+    border-radius: 20px;
+    padding: 30px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 280px;
+    flex: 1;
+    max-width: 350px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 20px rgba(2, 15, 34, 0.3);
+}
+
+.cta-btn .small-text {
+    font-size: 0.85rem;
+    letter-spacing: 3px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.cta-btn .large-text {
+    font-family: 'Zizo', sans-serif;
+    font-size: 2.4rem;
+    line-height: 0.9;
+    display: block;
+    width: 100%;
+}
+
+.cta-btn:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(2, 15, 34, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.cta-btn .small-text,
+.cta-btn .large-text,
+.cta-btn i {
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+.cta-btn:hover .small-text,
+.cta-btn:hover .large-text,
+.cta-btn:hover i {
+    color: #f2ede4;
+}
+
+.social-icons {
+    display: flex;
+    gap: 30px;
+    margin-top: 15px;
+}
+
+.social-icons i {
+    font-size: 2.8rem;
+}
+
+.google-logo-img {
+    height: 45px;
+    margin-top: 10px;
+    filter: brightness(0) invert(1);
+    transition: filter 0.3s ease;
+}
+
+.cta-btn:hover .google-logo-img {
+    filter: none;
+}
+
+/* ============================================================================
+   SEÇÃO LOCALIZAÇÃO - MAPA E ESTACIONAMENTO
+   ============================================================================ */
 
 .location-container {
     display: flex;
-    flex-direction: row; /* Lado a lado sempre, conforme solicitado */
+    flex-direction: row;
     gap: 60px;
     align-items: stretch;
     justify-content: center;
@@ -427,14 +652,13 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
-/* Moldura do Mapa */
 .map-wrapper {
     width: 100%;
     height: 100%;
     min-height: 350px;
     border-radius: 25px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .map-wrapper iframe {
@@ -449,13 +673,13 @@ body {
     gap: 10px;
     margin-top: 20px;
     padding: 15px;
-    background-color: #ffffff; /* Branco puro para destacar do Branco Gelo */
+    background-color: #ffffff;
     border-radius: 15px;
-    border: 1px solid rgba(0,0,0,0.05);
+    border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .address-text i {
-    color: #7c98a1; /* Nosso tom Terracota de destaque */
+    color: #7c98a1;
     font-size: 1.2rem;
 }
 
@@ -467,305 +691,29 @@ body {
     margin: 0;
 }
 
-/* Moldura do Estacionamento */
 .parking-card {
     width: 100%;
     height: 100%;
     min-height: 350px;
     border-radius: 25px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .parking-card img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Garante que a imagem preencha o card sem distorcer */
-}
-
-.reviews-section {
-    padding-bottom: 80px;
-    text-align: center;
-    background-color: #f2ede4; /* Cor Creme de fundo */
-}
-
-.reviews-header {
-    margin-bottom: 40px;
-}
-
-.reviews-subtitle {
-    font-family: 'Poppins', sans-serif;
-    color: #666;
-    margin-top: -15px;
-    font-size: 1.1rem;
-}
-
-.cta-buttons-title {
-    font-family: 'Zizo', sans-serif;
-    color: #1a2a30;
-    font-size: 2.8rem;
-    margin-bottom: 20px;
-}
-
-.elfsight-container {
-    margin-bottom: 60px;
-    background: #f8f9fa; /* Branco Gelo atrás do widget */
-    padding: 20px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-}
-
-.cta-buttons-grid {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    flex-wrap: wrap;
-}
-
-/* Estilo do Botão (Base) */
-.cta-btn {
-    background: linear-gradient(180deg, #233f47 0%, #020f22 100%);
-    border-radius: 20px;
-    padding: 30px;
-    text-decoration: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-width: 280px;
-    flex: 1;
-    max-width: 350px;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 10px 20px rgba(2, 15, 34, 0.3);
-}
-
-/* O texto pequeno em cima */
-.cta-btn .small-text {
-    font-size: 0.85rem; /* Um pouco maior para não sumir */
-    letter-spacing: 3px; /* Mais espaçamento entre letras fica elegante */
-    margin-bottom: 8px;
-    text-transform: uppercase;
-    font-weight: 600;
-}
-
-/* O texto principal (Zizo) */
-.cta-btn .large-text {
-    font-family: 'Zizo', sans-serif;
-    font-size: 2.4rem; /* Tamanho bem imponente */
-    line-height: 0.9;  /* Altura de linha reduzida para as palavras "colarem" */
-    display: block;
-    width: 100%;
-}
-
-/* Estado de HOVER do Botão */
-.cta-btn:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(2, 15, 34, 0.5);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-/* Ícones e Textos dentro do botão (Cor Inicial) */
-.cta-btn .small-text,
-.cta-btn .large-text,
-.cta-btn i {
-    color: #ffffff; 
-    transition: color 0.3s ease;
-}
-
-/* HOVER UNIFICADO: Quando passar o mouse no botão, tudo muda de cor junto */
-.cta-btn:hover .small-text,
-.cta-btn:hover .large-text,
-.cta-btn:hover i {
-    color: #f2ede4; /* Cor de contraste suave (Creme) */
-    /* Se preferir algo mais vivo, use o Terracota: #a65d37 */
-}
-
-/* Ajuste específico para os ícones sociais para não herdarem cores externas */
-.social-icons {
-    display: flex;
-    gap: 30px;
-    margin-top: 15px;
-}
-
-.social-icons i {
-    font-size: 2.8rem;
-}
-
-/* Logo do Google */
-.google-logo-img {
-    height: 45px; /* Logo do Google maior */
-    margin-top: 10px;
-    filter: brightness(0) invert(1); /* Deixa o logo branco inicialmente */
-    transition: filter 0.3s ease;
-}
-
-/* Ajuste para os ícones sociais ocuparem espaço */
-.social-icons {
-    gap: 30px;
-    margin-top: 15px;
-}
-
-.cta-btn:hover .google-logo-img {
-    filter: none; /* Volta as cores originais do Google no hover */
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-    .cta-btn {
-        min-width: 100%;
-    }
-}
-
-.gallery-section {
-    padding: 20px 0;
-}
-
-.gallery-grid {
-    display: flex; /* Alterado de grid para flex */
-    flex-direction: row; /* Mantém os itens lado a lado no desktop */
-    flex-wrap: wrap; /* Garante que os cards quebrem linha em telas menores */
-    gap: 40px; /* Mantém o espaçamento definido entre os elementos */
-    justify-content: center; /* Substitui o justify-items do grid para centralizar no flex */
-    align-items: center; /* Alinha os cards pelo topo */
-}
-
-
-/* Estilização do Texto (Label) */
-.gallery-info {
-    margin-bottom: 15px;
-    transition: transform 0.3s ease;
-}
-
-.gallery-info h3 {
-    font-family: 'Zizo', sans-serif;
-    font-size: 2.2rem;
-    color: #233f47;
-    margin: 0;
-}
-
-.gallery-info p {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.1rem;
-    color: #7c98a1;
-    margin: 5px 0 0;
-}
-
-/* Container da Imagem com Moldura */
-.gallery-image {
-    position: relative;
-    border-radius: 25px;
-    overflow: hidden;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-    background-color: #233f47; /* Cor de fundo para o efeito de fade */
-}
-
-.gallery-image img {
-    height: 100%;
     object-fit: cover;
-    display: block;
-    transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
-/* --- EFEITO HOVER --- */
+/* ============================================================================
+   FOOTER - RODAPÉ
+   ============================================================================ */
 
-.gallery-card:hover .gallery-image img {
-    transform: scale(1.08); /* Zoom suave */
-    opacity: 0.85; /* Leve escurecimento para destacar o texto */
-}
-
-.gallery-card:hover .gallery-info {
-    transform: translateX(10px); /* O texto se move levemente para o lado */
-}
-
-.gallery-card:hover h3 {
-    color: #345e69; /* Muda levemente a cor do título */
-}
-
-/* Ajuste da Coluna Direita */
-.gallery-group-right {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-}
-
-/* Responsividade */
-@media (max-width: 992px) {
-    .gallery-grid {
-        grid-template-columns: 1fr;
-    }
-    .gallery-info h3 { font-size: 1.8rem; }
-}
-
-.full-buffet-section {
-    padding: 80px 0;
-}
-
-.buffet-header {
-    margin-bottom: 50px;
-    text-align: center;
-}
-
-.buffet-title {
-    font-family: 'Zizo', sans-serif;
-    font-size: 3.5rem;
-    color: #233f47;
-    margin: 0;
-    line-height: 0.8;
-}
-
-.buffet-subtitle {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.2rem;
-    color: #7c98a1;
-    letter-spacing: 5px;
-    margin-top: 10px;
-}
-
-/* Container do Card com Grid */
-.buffet-card-container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.buffet-grid-frame {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr; /* Coluna da esquerda maior que a da direita */
-    grid-template-rows: 250px 250px; /* Duas linhas fixas para as fotos laterais */
-    gap: 15px;
-    background-color: #fff;
-    padding: 15px;
-    border-radius: 30px;
-    box-shadow: 0 20px 40px rgba(35, 63, 71, 0.1);
-}
-
-.buffet-img-box {
-    overflow: hidden;
-    border-radius: 15px;
-    position: relative;
-}
-
-.buffet-img-box img {
-    width: 100%;
-    height: 100%;
-    transition: transform 0.5s ease;
-}
-
-/* Imagem Principal (Ocupa as duas linhas da esquerda) */
-.main {
-    grid-row: 1 / span 2;
-}
-
-/* Efeito de hover em todas as fotos */
-.buffet-img-box:hover img {
-    transform: scale(1.08);
-}
 .main-footer {
-    /* Aplicando o gradiente solicitado */
     background-color: #233f47;
     color: #f2ede4;
-    padding: 15px 0 0; /* Reduzido de 80px */
+    padding: 15px 0 0;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -776,15 +724,20 @@ body {
     align-items: center;
 }
 
+.footer-column {
+    display: flex;
+    flex-direction: column;
+}
+
 .footer-column.branding {
     display: flex;
-    align-items: center; /* Alinha logo e texto pelo centro verticalmente */
-    gap: 40px; /* Espaço entre a logo e o texto */
+    align-items: center;
+    gap: 40px;
 }
 
 .footer-logo-wrapper {
-    flex-shrink: 0; /* Impede que a logo diminua */
-    width: 150px;   /* Ajuste conforme o tamanho da sua logo */
+    flex-shrink: 0;
+    width: 150px;
 }
 
 .footer-logo {
@@ -801,24 +754,8 @@ body {
 
 .footer-description {
     margin: 0;
-    max-width: 500px; /* Evita que o texto estique demais para os lados */
+    max-width: 500px;
 }
-
-/* Responsividade: Volta a ser empilhado no celular */
-@media (max-width: 992px) {
-    .footer-column.branding {
-        flex-direction: column;
-        text-align: center;
-        gap: 20px;
-    }
-    
-    .footer-social {
-        justify-content: center;
-    }
-}
-
-
-
 
 .footer-social {
     display: flex;
@@ -829,14 +766,14 @@ body {
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    background: rgba(255,255,255,0.08);
+    background: rgba(255, 255, 255, 0.08);
     display: flex;
     align-items: center;
     justify-content: center;
     color: #f2ede4;
     transition: all 0.3s ease;
     font-size: 1rem;
-    border: 1px solid rgba(255,255,255,0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     text-decoration: none;
 }
 
@@ -845,8 +782,7 @@ body {
     transform: translateY(-3px);
 }
 
-/* Coluna de Contato */
-.footer-column h3 {
+.footer-column.contact h3 {
     font-family: 'Zizo', sans-serif;
     font-size: 1.3rem;
     margin-bottom: 20px;
@@ -862,11 +798,10 @@ body {
 }
 
 .contact-info i {
-    color:#f2ede4;
+    color: #f2ede4;
     width: 20px;
 }
 
-/* Barra Final */
 .footer-bottom {
     padding: 20px 0;
     text-align: center;
@@ -877,137 +812,506 @@ body {
     margin: 0;
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-    .footer-grid {
-        grid-template-columns: 1fr;
+/* ============================================================================
+   BOTÃO WHATSAPP FLUTUANTE
+   ============================================================================ */
+
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 35px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    background-color: #128c7e;
+    transform: scale(1.1);
+    color: #fff;
+}
+
+
+
+
+
+/* ============================================================================
+   RESPONSIVIDADE - MEDIA QUERIES
+   ============================================================================ */
+
+/* Telas Grandes (2K/4K) */
+@media (min-width: 1400px) {
+    .container { max-width: 1320px; }
+}
+
+@media (min-width: 1600px) {
+    .container { max-width: 1500px; }
+}
+
+@media (min-width: 1920px) {
+    .container { max-width: 1650px; }
+}
+
+/* Tablets e Laptops Pequenos */
+@media (max-width: 1100px) {
+    .legacy-container {
+        flex-direction: column;
         text-align: center;
     }
-    .footer-logo-wrapper, .footer-social, .contact-info p {
-        justify-content: center;
+
+    .legacy-layout {
+        padding: 30px;
     }
-    .footer-description {
-        margin: 0 auto 20px;
+
+    .info-side {
+        padding: 40px;
     }
-}
-/* --- RESPONSIVIDADE --- */
-@media (max-width: 768px) {
-    .buffet-grid-frame {
-        grid-template-columns: 1fr; /* No mobile, vira uma coluna única */
-        grid-template-rows: 300px 200px 200px;
-        gap: 10px;
-    }
-    
-    .main {
-        grid-row: 1; /* Volta a ocupar apenas uma linha no mobile */
-    }
-    
-    .buffet-title {
+
+    .section-title {
         font-size: 2.8rem;
     }
 }
-/* --- RESPONSIVIDADE --- */
+
+/* Tablets */
 @media (max-width: 992px) {
-    .gallery-grid {
-        grid-template-columns: 1fr; /* No mobile, tudo vira uma coluna só */
+    .family-card {
+        flex-direction: column;
+        border-radius: 30px;
+        margin: 0 15px;
+        overflow: hidden;
     }
-    
-    .gallery-item.large {
-        height: 400px;
+
+    .info-side {
+        order: 1;
+        padding: 40px 25px;
+        text-align: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .image-side {
+        order: 2;
+        width: 100%;
+        min-height: 280px;
+        max-height: 350px;
+    }
+
+    .section-title {
+        font-size: 2.6rem;
+        line-height: 1.1;
+    }
+
+    .section-title br {
+        display: none;
+    }
+
+    .text-content p {
+        max-width: 100%;
+        font-size: 1.15rem;
+        line-height: 1.6;
+    }
+
+    .btn-compact {
+        width: 100%;
+        max-width: 300px;
+        padding: 18px 25px;
+        font-size: 1.1rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+
+    .family-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    .history-year {
+        font-size: 4rem;
+    }
+
+    .history-year span {
+        font-size: 4rem;
+    }
+
+    .legacy-layout {
+        flex-direction: column;
+    }
+
+    .legacy-image-wrapper {
+        max-width: 350px;
+    }
+
+    .location-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .map-wrapper,
+    .parking-card {
+        height: 350px;
+    }
+
+    .parking-card img {
+        object-fit: unset;
+    }
+
+    .main-footer {
+        padding: 40px 0 20px;
+    }
+
+    .footer-grid {
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .footer-column.branding {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .footer-logo-wrapper {
+        width: 130px;
+        margin: 0 auto;
+    }
+
+    .footer-description {
+        max-width: 100%;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        padding: 0 10px;
+    }
+
+    .footer-social {
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .footer-social a {
+        width: 52px;
+        height: 52px;
+    }
+
+    .footer-social i {
+        font-size: 32px;
+    }
+
+    .footer-column.contact h3 {
+        font-size: 1.5rem;
+        margin-bottom: 25px;
+    }
+
+    .contact-info p {
+        justify-content: center;
+        font-size: 1rem;
+        margin-bottom: 15px;
+    }
+
+    .footer-bottom {
+        margin-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        padding-top: 20px;
+    }
+
+    .gallery-grid {
+        flex-direction: column;
     }
 }
 
-/* Responsividade */
+/* Celulares */
 @media (max-width: 768px) {
+    .history-section,
+    .full-buffet-section,
+    .location-section {
+        padding: 50px 0;
+    }
+
+    .container-oculta-garfo {
+        display: none;
+    }
+
+    .header-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .main-title {
+        font-size: 2rem;
+    }
+
+    .floating-fork {
+        display: none;
+    }
+
+    .family-card {
+        flex-direction: column;
+        border-radius: 30px;
+        margin: 0 15px;
+        overflow: hidden;
+    }
+
+    .info-side {
+        order: 1;
+        padding: 40px 25px;
+        text-align: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .image-side {
+        order: 2;
+        width: 100%;
+        min-height: 280px;
+        max-height: 350px;
+    }
+
+    .section-title {
+        font-size: 2.2rem;
+        line-height: 1.1;
+    }
+
+    .section-title br {
+        display: none;
+    }
+
+    .text-content p {
+        max-width: 100%;
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    .btn-compact {
+        width: 100%;
+        max-width: 280px;
+        padding: 16px 20px;
+        font-size: 1rem;
+    }
+
+    .family-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    .gallery-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .gallery-group-right {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .gallery-card.small {
+        width: 100%;
+        max-width: 350px;
+        text-align: center;
+        background-color: transparent;
+        box-shadow: none;
+    }
+
+    .gallery-card.large {
+        max-width: 350px;
+        text-align: center;
+        background-color: transparent;
+        box-shadow: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .gallery-info {
+        margin-bottom: 0;
+    }
+
+    .gallery-image {
+        width: 100%;
+        height: 250px;
+        border-radius: 25px;
+        overflow: hidden;
+        background-color: transparent;
+    }
+
+    .gallery-card.large .gallery-image {
+        height: 300px;
+    }
+
+    .gallery-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    .gallery-info h3 {
+        margin-bottom: 5px;
+    }
+
+    .gallery-info p {
+        margin-bottom: 15px;
+    }
+
+    .gallery-card:hover .gallery-info {
+        transform: none;
+    }
+
+    .group {
+        gap: 40px;
+    }
+
+    .card {
+        width: 200px;
+        height: 200px;
+    }
+
+    .history-year {
+        font-size: 4rem;
+    }
+
+    .history-year span {
+        font-size: 4rem;
+    }
+
+    .legacy-layout {
+        flex-direction: column;
+    }
+
+    .legacy-image-wrapper {
+        max-width: 300px;
+    }
+
+    .buffet-grid-frame {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    .location-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .map-wrapper,
+    .parking-card {
+        height: 350px;
+    }
+
+    .parking-card img {
+        object-fit: unset;
+    }
+
+    .main-footer {
+        padding: 40px 0 20px;
+    }
+
+    .footer-grid {
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .footer-column.branding {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .footer-logo-wrapper {
+        width: 130px;
+        margin: 0 auto;
+    }
+
+    .footer-description {
+        max-width: 100%;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        padding: 0 10px;
+    }
+
+    .footer-social {
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .footer-social a {
+        width: 52px;
+        height: 52px;
+    }
+
+    .footer-social i {
+        font-size: 32px;
+    }
+
+    .footer-column.contact h3 {
+        font-size: 1.5rem;
+        margin-bottom: 25px;
+    }
+
+    .contact-info p {
+        justify-content: center;
+        font-size: 1rem;
+        margin-bottom: 15px;
+    }
+
+    .footer-bottom {
+        margin-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        padding-top: 20px;
+    }
+
     .cta-buttons-grid {
         flex-direction: column;
         align-items: center;
     }
+
     .cta-btn {
         width: 100%;
-        max-width: 350px;
+    }
+
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        font-size: 30px;
+        bottom: 15px;
+        right: 15px;
     }
 }
 
-
-/* --- AJUSTE PARA MOBILE (Mantendo Row) --- */
-@media (max-width: 768px) {
-    .location-container {
-        gap: 15px; /* Reduz o espaço para caber os dois */
-        padding: 0 10px;
-    }
-
-    .location-title {
-        font-size: 1.2rem;
-        margin-bottom: 10px;
-    }
-
-    .map-wrapper, .parking-card {
-        min-height: 200px; /* Reduz a altura para não ocupar a tela toda no mobile */
-        border-radius: 15px;
-    }
-}
-
-/* --- RESPONSIVIDADE (MOBILE) --- */
-@media (max-width: 1100px) {
-    .legacy-container {
-        flex-direction: column; /* Empilha no tablet/mobile */
-        gap: 60px;
-        text-align: center;
-    }
-
-    .history-intro, .legacy-layout {
-        flex: none;
-        width: 100%;
-    }
-
-    .legacy-layout {
-        flex-direction: column; /* Imagem em cima do texto dentro do card */
-        padding: 30px;
-    }
-    
-    .legacy-image-wrapper {
-        max-width: 300px;
-    }
-}
-
-
-/* Responsividade */
-@media (max-width: 992px) {
- .family-card {
-        flex-direction: column;
-        border-radius: 25px;
-        margin: 0 10px;
-    }
-    .image-side {
-        min-height: 350px;
-        order: 1;
-    }
-    .info-side {
-        padding: 40px 30px;
-        order: 2;
-        text-align: center;
-    }
+/* Celulares Pequenos */
+@media (max-width: 480px) {
     .section-title {
-        font-size: 3rem;
+        font-size: 2.2rem;
     }
-    .group {
-        gap: 50px;
+
+    .history-year span {
+        font-size: 3.5rem;
     }
-    .card {
-        width: 180px;
-        height: 180px;
-    }
-     .legacy-layout {
-        flex-direction: column;
-        text-align: center;
-        gap: 40px;
-    }
+
     .name-badge {
-        left: 50%;
-        transform: translateX(-50%);
-        bottom: -15px;
-        white-space: nowrap;
+        position: relative;
+        left: 0;
+        bottom: 0;
+        margin-top: 10px;
+        display: inline-block;
     }
-    .history-year span { font-size: 3.5rem; }
 }

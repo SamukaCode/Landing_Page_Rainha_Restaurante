@@ -3,7 +3,15 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="assets/favicon/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Rainha Restaurante - Tradição familiar desde 1999. Buffet completo, churrasco e gastronomia autêntica em Rio Claro - SP. Aberto todos os dias.">
+    <meta name="keywords" content="restaurante, buffet, churrasco, Rio Claro, gastronomia, comida caseira">
+    <meta property="og:title" content="Rainha Restaurante - Desde 1999">
+    <meta property="og:description" content="Tradição familiar desde 1999. Buffet completo e gastronomia autêntica.">
+    <meta property="og:type" content="business.business">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:image" content="assets/img/Logo-Rainha.png">
     <title>Rainha Restaurante - Desde 1999</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -12,100 +20,144 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "Rainha Restaurante",
+      "image": "assets/img/Logo-Rainha.png",
+      "description": "Restaurante com tradição familiar desde 1999, oferecendo buffet completo e gastronomia autêntica",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "R. 6, 1253 - Centro",
+        "addressLocality": "Rio Claro",
+        "addressRegion": "SP",
+        "postalCode": "13500-190",
+        "addressCountry": "BR"
+      },
+      "telephone": "+5519991673791",
+      "url": "https://rainharestaurante.com",
+      "sameAs": [
+        "https://www.instagram.com/rainharestaurante",
+        "https://www.facebook.com/rainharestauranterc"
+      ],
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "11:00",
+        "closes": "14:00"
+      },
+      "servesCuisine": ["Brazilian", "Italian"],
+      "priceRange": "$$"
+    }
+    </script>
 </head>
 
 <body>
     <header class="main-header">
-        <div class="container header-content">
-            <div class="logo-area">
-                <img src="assets/img/Logo-Rainha.png" alt="Rainha Restaurante Logo" class="logo">
-            </div>
-            <div class="cta-area">
-                <h1 class="main-title"> AQUI A TRADIÇÃO <br>
-                    <span class="subtitle-header">é comer bem!</span>
-                </h1>
-            </div>
-            <div class="garfo-area">
-                <img src="assets/img/Garfo.png" alt="Garfo com carne" class="floating-fork">
-            </div>
+    <div class="container header-content">
+        <div class="logo-area" data-aos="fade-down">
+            <img src="assets/img/Logo-Rainha.png" alt="Rainha Restaurante Logo" class="logo">
         </div>
-    </header>
+        <div class="cta-area" data-aos="zoom-in" data-aos-delay="300">
+            <h1 class="main-title"> AQUI A TRADIÇÃO <br>
+                <span class="subtitle-header">é comer bem!</span>
+            </h1>
+        </div>
+        <div class="garfo-area" data-aos="fade-left" data-aos-delay="600">
+            <img src="assets/img/Garfo.png" alt="" aria-hidden="true" class="floating-fork">
+        </div>
+    </div>
+</header>
     <div class="container-oculta-garfo"></div>
-    <section class="about-section">
-        <div class="container about-content">
-            <div class="family-card">
-                <div class="info-side">
-                    <h2 class="section-title">ABERTO <br><span class="highlight">TODOS OS DIAS</span></h2>
-                    <div class="text-content">
-                        <p>Aberto todos os dias, o <strong>Rainha Restaurante</strong> une uma gastronomia saudável, receitas tradicionais e o sabor do churrasco em uma experiência pensada para quem valoriza qualidade e bem-estar.</p>
-                    </div>
-                    <div class="decor-circles"></div>
+
+<section class="about-section">
+    <div class="container">
+        <div class="family-card">
+            <div class="info-side"data-aos="fade-right" data-aos-delay="200">
+                <div class="badge-tradicao">DESDE 1999</div>
+                <h2 class="section-title">ABERTO <br><span class="highlight">TODOS OS DIAS</span></h2>
+                
+                <div class="text-content">
+                    <p>No <strong>Rainha Restaurante</strong>, a tradição familiar encontra a sofisticação. Unimos uma gastronomia saudável a receitas que atravessam gerações, criando uma experiência única para quem valoriza o verdadeiro sabor.</p>
                 </div>
-                <div class="image-side">
-                    <img src="assets/img/foto-familia.png" alt="Família no Restaurante" class="family-img">
+
+                <div class="about-cta">
+                    <a href="https://wa.me/5519991673791?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20fazer%20uma%20reserva." target="_blank" rel="noopener noreferrer" class="btn-compact">RESERVE SUA MESA</a>
                 </div>
             </div>
+
+            <div class="image-side" data-aos="fade-left" data-aos-delay="400">
+                <img src="assets/img/foto-familia.png" alt="Família reunida no Rainha Restaurante desfrutando de refeição em ambiente acolhedor" class="family-img">
+            </div>
         </div>
-    </section>
+    </div>
+</section>
+
     <section class="full-buffet-section">
         <div class="container">
-            <div class="buffet-header">
+            <div class="buffet-header" data-aos="fade-down">
                 <h2 class="buffet-title">BUFFET</h2>
                 <p class="buffet-subtitle">COMPLETO</p>
             </div>
             <div class="buffet-card-container">
                 <div class="buffet-grid-frame">
-                    <div class="buffet-img-box main">
-                        <img src="assets/img/buffet-1.jpg" alt="Buffet Variado">
+                    <div class="buffet-img-box main" data-aos="zoom-in">
+                        <img src="assets/img/buffet-1.jpg" alt="Buffet completo do Rainha Restaurante com grande variedade de pratos">
                     </div>
-                    <div class="buffet-img-box side-top">
-                        <img src="assets/img/buffet-2.jpg" alt="Saladas e Pratos Frios">
+                    <div class="buffet-img-box side-top" data-aos="fade-left" data-aos-delay="200">
+                        <img src="assets/img/buffet-2.jpg" alt="Seleção de saladas frescas e pratos frios do buffet do Rainha Restaurante">
                     </div>
-                    <div class="buffet-img-box side-bottom">
-                        <img src="assets/img/buffet-3.jpg" alt="Pratos Quentes">
+                    <div class="buffet-img-box side-bottom" data-aos="fade-left" data-aos-delay="400">
+                        <img src="assets/img/buffet-3.jpg" alt="Variedade de pratos quentes e preparações do buffet do Rainha Restaurante">
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
     <section class="gallery-section">
         <div class="container gallery-grid">
-            <div class="gallery-card large">
+            <div class="gallery-card large" data-aos="fade-right">
                 <div class="gallery-info">
                     <h3>CHURRASCO</h3>
                     <p>No ponto certo!</p>
                 </div>
                 <div class="gallery-image">
-                    <img src="assets/img/churrasqueiro.png" alt="Churrasqueiro">
+                    <img src="assets/img/churrasqueiro.png" alt="Churrascaria especializada do Rainha Restaurante servindo carnes no ponto certo">
                 </div>
             </div>
             <div class="gallery-group-right">
-                <div class="gallery-card">
+                <div class="gallery-card small" data-aos="fade-left" data-aos-delay="200">
                     <div class="gallery-info">
                         <h3>AMBIENTE</h3>
                         <p>Acolhedor e familiar</p>
                     </div>
-                    <div class="gallery-image">
-                        <img src="assets/img/clientes-no-salao.png" alt="Clientes no salão">
+                    <div class="gallery-image" data-aos="fade-left" data-aos-delay="400">
+                        <img src="assets/img/clientes-no-salao.png" alt="Clientes descontraídos no salão acolhedor e familiar do Rainha Restaurante">
                     </div>
                 </div>
-                <div class="gallery-card">
+                <div class="gallery-card small" data-aos="fade-left" data-aos-delay="600">
                     <div class="gallery-info">
                         <h3>SABORES</h3>
                         <p>Variedade que encanta</p>
                     </div>
-                    <div class="gallery-image">
-                        <img src="assets/img/pessoas-no-buffet.png" alt="Clientes no buffet">
+                    <div class="gallery-image" data-aos="fade-left" data-aos-delay="800">
+                        <img src="assets/img/pessoas-no-buffet.png" alt="Clientes escolhendo sabores variados no buffet completo do Rainha Restaurante">
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+
     <section class="history-section">
         <div class="container legacy-container">
-            <div class="history-intro">
-                <div class="bg-compass">
-                    <img src="assets/img/rosa-dos-ventos.png" alt="">
+            <div class="history-intro" data-aos="fade-up" data-aos-delay="200">
+                <div class="bg-compass" data-aos="zoom-out" data-aos-delay="500">
+                    <img src="assets/img/rosa-dos-ventos.png" alt="" aria-hidden="true">
                 </div>
                 <div class="container intro-content">
                     <div class="history-year"> DESDE <br>
@@ -115,8 +167,8 @@
                 </div>
             </div>
             <div class="legacy-layout">
-                <div class="legacy-image-wrapper">
-                    <img src="assets/img/dona-cida.png" alt="Dona Cida" class="cida-img">
+                <div class="legacy-image-wrapper" data-aos="fade-right" data-aos-delay="400">
+                    <img src="assets/img/dona-cida.png" alt="Dona Cida, fundadora do Rainha Restaurante com tradição familiar desde 1999" class="cida-img">
                     <div class="name-badge">DONA CIDA</div>
                 </div>
                 <div class="legacy-info">
@@ -126,70 +178,73 @@
             </div>
         </div>
     </section>
-    <div class="carousel">
+    <section class="section-carousel">
+    <div class="carousel container">
         <div class="group">
-            <div class="card"><img src="assets/img/prato-carne-arroz.png" alt="Churrasco"></div>
-            <div class="card"><img src="assets/img/prato-frango-arroz.png" alt="Frango"></div>
-            <div class="card"><img src="assets/img/prato-salada.png" alt="Salada"></div>
-            <div class="card"><img src="assets/img/prato-carne-arroz.png" alt="Churrasco"></div>
-            <div class="card"><img src="assets/img/prato-frango-arroz.png" alt="Frango"></div>
-            <div class="card"><img src="assets/img/prato-salada.png" alt="Salada"></div>
+            <div class="card"><img src="assets/img/prato-carne-arroz.png" alt="Prato de churrasco com arroz do Rainha Restaurante"></div>
+            <div class="card"><img src="assets/img/prato-frango-arroz.png" alt="Prato de frango com arroz do Rainha Restaurante"></div>
+            <div class="card"><img src="assets/img/prato-salada.png" alt="Prato com salada fresca do Rainha Restaurante"></div>
+            <div class="card"><img src="assets/img/prato-carne-arroz.png" alt="Prato de churrasco com arroz do Rainha Restaurante"></div>
+            <div class="card"><img src="assets/img/prato-frango-arroz.png" alt="Prato de frango com arroz do Rainha Restaurante"></div>
+            <div class="card"><img src="assets/img/prato-salada.png" alt="Prato com salada fresca do Rainha Restaurante"></div>
         </div>
         <div aria-hidden="true" class="group">
-            <div class="card"><img src="assets/img/prato-carne-arroz.png" alt="Churrasco"></div>
-            <div class="card"><img src="assets/img/prato-frango-arroz.png" alt="Frango"></div>
-            <div class="card"><img src="assets/img/prato-salada.png" alt="Salada"></div>
-            <div class="card"><img src="assets/img/prato-carne-arroz.png" alt="Churrasco"></div>
-            <div class="card"><img src="assets/img/prato-frango-arroz.png" alt="Frango"></div>
-            <div class="card"><img src="assets/img/prato-salada.png" alt="Salada"></div>
+            <div class="card"><img src="assets/img/prato-carne-arroz.png" alt=""></div>
+            <div class="card"><img src="assets/img/prato-frango-arroz.png" alt=""></div>
+            <div class="card"><img src="assets/img/prato-salada.png" alt=""></div>
+            <div class="card"><img src="assets/img/prato-carne-arroz.png" alt=""></div>
+            <div class="card"><img src="assets/img/prato-frango-arroz.png" alt=""></div>
+            <div class="card"><img src="assets/img/prato-salada.png" alt=""></div>
         </div>
     </div>
-    <section class="reviews-section" id="reviews">
+    </section>
+
+    <section class="reviews-section" id="reviews" data-aos="fade-up">
         <div class="container">
-            <div class="reviews-header">
+            <div class="reviews-header" data-aos="fade-down" data-aos-delay="200">
                 <h2 class="cta-buttons-title">O QUE DIZEM NOSSOS CLIENTES</h2>
                 <p class="reviews-subtitle">Sua satisfação é a nossa maior tradição.</p>
             </div>
-            <div class="elfsight-container">
+            <div class="elfsight-container" data-aos="zoom-in" data-aos-delay="400">
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.2.10/iframeResizer.min.js"></script>
-                <iframe onload="iFrameResize(this)" src="https://3dea7c35b2c3420abefbca14b61d09d6.elf.site" style="border:none;width:100%;" scrolling="no"></iframe>
+                <iframe title="Avaliações de clientes do Rainha Restaurante" onload="iFrameResize(this)" src="https://3dea7c35b2c3420abefbca14b61d09d6.elf.site" style="border:none;width:100%;" scrolling="no"></iframe>
             </div>
             <div class="cta-buttons-grid">
-                <a href="#" class="cta-btn tour-btn">
+                <a href="#" class="cta-btn tour-btn" data-aos="fade-up" data-aos-delay="500" aria-label="Fazer tour 360 do restaurante">
                     <span class="small-text">CONHEÇA NOSSO RESTAURANTE</span>
                     <span class="large-text">TOUR 360º</span>
                 </a>
-                <div class="cta-btn social-btn">
+                <div class="cta-btn social-btn" data-aos="fade-up" data-aos-delay="700">
                     <span class="small-text">ACOMPANHE O RAINHA</span>
                     <div class="social-icons">
-                        <a href="https://www.instagram.com/rainharestaurante" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="https://www.facebook.com/rainharestauranterc" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-                        <a href="https://wa.me/5519991673791" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/rainharestaurante" target="_blank" rel="noopener noreferrer" aria-label="Siga Rainha Restaurante no Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/rainharestauranterc" target="_blank" rel="noopener noreferrer" aria-label="Siga Rainha Restaurante no Facebook"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://wa.me/5519991673791" target="_blank" rel="noopener noreferrer" aria-label="Conecte via WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
                     </div>
                 </div>
-                <a href="#" class="cta-btn google-btn">
+                <a href="#" class="cta-btn google-btn" data-aos="fade-up" data-aos-delay="900" aria-label="Avaliar Rainha Restaurante no Google">
                     <span class="small-text">NOS AVALIE NO</span>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Logo" class="google-logo-img">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="" aria-hidden="true" class="google-logo-img">
                 </a>
             </div>
         </div>
     </section>
     <section class="location-section">
         <div class="container location-container">
-            <div class="map-box">
+            <div class="map-box" data-aos="fade-right" data-aos-delay="300">
                 <h3 class="location-title">LOCALIZAÇÃO</h3>
                 <div class="map-wrapper">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3688.081155912444!2d-47.5638146!3d-22.4071665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c7db37825590ad%3A0xc3f2c5e5e0d6a2f8!2sR.%206%2C%201253%20-%20Centro%2C%20Rio%20Claro%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1709579000000!5m2!1spt-BR!2sbr" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    <iframe title="Localização do Rainha Restaurante no Google Maps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3688.081155912444!2d-47.5638146!3d-22.4071665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c7db37825590ad%3A0xc3f2c5e5e0d6a2f8!2sR.%206%2C%201253%20-%20Centro%2C%20Rio%20Claro%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1709579000000!5m2!1spt-BR!2sbr" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
-                <div class="address-text">
+                <div class="address-text" data-aos="fade-up" data-aos-delay="400">
                     <i class="fas fa-map-marker-alt"></i>
                     <p>R. 6, 1253 - Centro, Rio Claro - SP, 13500-190</p>
                 </div>
             </div>
-            <div class="parking-box">
+            <div class="parking-box" data-aos="fade-left" data-aos-delay="300">
                 <h3 class="location-title">ESTACIONAMENTO <span>EXCLUSIVO</span></h3>
-                <div class="parking-card">
-                    <img src="assets/img/estacionamento.png" alt="Estacionamento exclusivo do Rainha Restaurante">
+                <div class="parking-card" data-aos="zoom-in-up" data-aos-delay="500">
+                    <img src="assets/img/estacionamento.png" alt="Estacionamento exclusivo e seguro disponível para clientes do Rainha Restaurante">
                 </div>
             </div>
         </div>
@@ -198,14 +253,14 @@
         <div class="container footer-grid">
             <div class="footer-column branding">
                 <div class="footer-logo-wrapper">
-                    <img src="assets/img/Logo-Rainha.png" alt="Rainha Restaurante" class="footer-logo">
+                    <img src="assets/img/Logo-Rainha.png" alt="Logo do Rainha Restaurante - Tradição desde 1999" class="footer-logo">
                 </div>
                 <div class="footer-branding-content">
                     <p class="footer-description"> Desde 1999, servindo o melhor da gastronomia com o carinho de uma tradição familiar. </p>
                     <div class="footer-social">
-                        <a href="https://www.instagram.com/rainharestaurante" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="https://www.facebook.com/rainharestauranterc" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-                        <a href="https://wa.me/5519991673791?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20fazer%20uma%20reserva." target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/rainharestaurante" target="_blank" rel="noopener noreferrer" aria-label="Siga Rainha Restaurante no Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/rainharestauranterc" target="_blank" rel="noopener noreferrer" aria-label="Siga Rainha Restaurante no Facebook"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://wa.me/5519991673791?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20fazer%20uma%20reserva." target="_blank" rel="noopener noreferrer" aria-label="Conecte via WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
                     </div>
                 </div>
             </div>
@@ -214,7 +269,7 @@
                 <div class="contact-info">
                     <p><i class="fas fa-map-marker-alt"></i> R. 6, 1253 - Centro, Rio Claro - SP</p>
                     <p><i class="fas fa-phone"></i> (19) 99167-3791</p>
-                    <p><i class="fas fa-clock"></i> Todos os dias: 11h às 15h</p>
+                    <p><i class="fas fa-clock"></i> Todos os dias: 11h às 14h</p>
                 </div>
             </div>
         </div>
@@ -224,6 +279,16 @@
             </div>
         </div>
     </footer>
+    <a href="https://wa.me/5519991673791?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20fazer%20uma%20reserva." class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+    <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<script>
+  AOS.init({
+    duration: 1000, // Duração da animação em milissegundos
+    once: true,     // Se a animação deve acontecer apenas uma vez
+  });
+</script>
 </body>
 
 </html>
