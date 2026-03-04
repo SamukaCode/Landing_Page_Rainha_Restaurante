@@ -1236,12 +1236,12 @@ body {
 
     .gallery-info h3 {
         margin-bottom: 5px;
-        font-size: 1.5rem;
+        font-size: 1.8rem;
     }
 
     .gallery-info p {
         margin-bottom: 15px;
-        font-size: 1rem;
+        font-size: 1.2rem;
     }
 
     /* Remove efeitos de hover que podem bugar o toque no mobile */
