@@ -396,7 +396,7 @@ body {
 .history-year span {
     font-size: 8rem;
     display: block;
-    margin-top: 5px;
+    margin-top: 10px;
     background: linear-gradient(135deg, #233f47 0%, #345e69 50%, #233f47 100%);
     -webkit-background-clip: text;
     background-clip: text;
