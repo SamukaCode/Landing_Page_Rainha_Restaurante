@@ -563,20 +563,39 @@ body {
     box-shadow: 0 10px 20px rgba(2, 15, 34, 0.3);
 }
 
-.cta-btn .small-text {
-    font-size: 0.85rem;
-    letter-spacing: 3px;
-    margin-bottom: 8px;
-    text-transform: uppercase;
-    font-weight: 600;
-}
-
+/* Estilo para o container do texto grande */
 .cta-btn .large-text {
     font-family: 'Zizo', sans-serif;
     font-size: 2.4rem;
     line-height: 0.9;
-    display: block;
+    display: flex;         /* Mudamos para flex para alinhar a imagem */
+    align-items: center;   /* Centraliza verticalmente o texto e a imagem */
+    justify-content: center; /* Centraliza horizontalmente (se o botão for largo) */
+    gap: 10px;             /* Espaço entre a palavra TOUR e a imagem */
     width: 100%;
+}
+
+/* Estilo específico para a imagem 360 */
+.cta-btn .large-text img {
+    height: 1.2em;         /* A altura se baseia no tamanho da fonte (2.4rem) */
+    width: auto;           /* Mantém a proporção */
+    vertical-align: middle;
+    transition: transform 0.3s ease; /* Efeito suave ao passar o mouse */
+}
+
+/* Efeito extra no hover para a imagem (opcional) */
+.cta-btn:hover .large-text img {
+    transform: scale(1.1); /* A imagem cresce levemente com o botão */
+}
+
+/* Mantendo seus estilos originais de texto e hover */
+.cta-btn .small-text {
+    font-size: 1rem;
+    letter-spacing: 3px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    font-weight: 600;
+    display: block; /* Garante que fique acima do texto grande */
 }
 
 .cta-btn:hover {
@@ -724,15 +743,9 @@ body {
     align-items: center;
 }
 
-.footer-column {
-    display: flex;
-    flex-direction: column;
-}
-
 .footer-column.branding {
     display: flex;
-    align-items: center;
-    gap: 40px;
+    flex-direction: column;
 }
 
 .footer-logo-wrapper {
@@ -802,14 +815,47 @@ body {
     width: 20px;
 }
 
+
+
 .footer-bottom {
+    margin-top: 20px;
     padding: 20px 0;
-    text-align: center;
-    font-size: 0.8rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Opcional: linha divisória sutil */
+    font-size: 0.85rem;
+    color: #ffffff;
+}
+
+/* Container flexível para alinhar os dois lados */
+.d-flex-footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap; /* Garante que quebre linha no celular */
+    gap: 15px;
 }
 
 .footer-bottom p {
     margin: 0;
+    opacity: 0.8;
+}
+
+/* Estilização da área do desenvolvedor */
+.developer-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s ease;
+}
+
+.developer-info img {
+    height: 75px; /* Ajuste conforme o tamanho da sua logo */
+    width: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.developer-info a:hover img {
+    transform: scale(1.1); /* Efeito de zoom na logo */
 }
 
 /* ============================================================================
@@ -1279,6 +1325,12 @@ body {
         padding-top: 20px;
     }
 
+     .d-flex-footer {
+        justify-content: center;
+        text-align: center;
+        flex-direction: column; /* Empilha um sobre o outro */
+    }
+
     .cta-buttons-grid {
         flex-direction: column;
         align-items: center;
@@ -1286,6 +1338,14 @@ body {
 
     .cta-btn {
         width: 100%;
+    }
+
+    .cta-btn .small-text {
+    font-size: 1.3rem;
+    }
+
+    .cta-btn .large-text {
+        font-size: 2.6rem;
     }
 
     .whatsapp-float {

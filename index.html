@@ -212,7 +212,7 @@
             <div class="cta-buttons-grid">
                 <a href="#" class="cta-btn tour-btn" data-aos="fade-up" data-aos-delay="500" aria-label="Fazer tour 360 do restaurante">
                     <span class="small-text">CONHEÇA NOSSO RESTAURANTE</span>
-                    <span class="large-text">TOUR 360º</span>
+                    <span class="large-text">TOUR <img src="assets/img/360.png" class="img-360" alt="360"></span>
                 </a>
                 <div class="cta-btn social-btn" data-aos="fade-up" data-aos-delay="700">
                     <span class="small-text">ACOMPANHE O RAINHA</span>
@@ -274,8 +274,14 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <div class="container">
-                <p>&copy; 2026 Rainha Restaurante - Todos os direitos reservados.</p>
+            <div class="container d-flex-footer">
+                <p>&copy; <span id="year"></span> Rainha Restaurante - Todos os direitos reservados.</p>
+                <div class="developer-info">
+                    <span>Desenvolvido por</span>
+                    <a href="https://samukacode.github.io/Portfolio/" target="_blank" rel="noopener noreferrer">
+                        <img src="assets/img/logo-samuka-web.png" alt="Samuka Web Logo">
+                    </a>
+                </div>
             </div>
         </div>
     </footer>
@@ -284,10 +290,14 @@
 </a>
 
 <script>
+  // Inicialização do AOS
   AOS.init({
-    duration: 1000, // Duração da animação em milissegundos
-    once: true,     // Se a animação deve acontecer apenas uma vez
+    duration: 1000, 
+    once: true,     
   });
+
+  // Lógica para atualizar o ano automaticamente
+  document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 </body>
 
