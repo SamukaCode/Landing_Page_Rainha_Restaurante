@@ -1194,8 +1194,7 @@ body {
     }
 
     .gallery-card.large {
-        width: auto;
-        max-width: 350px;
+        width: auto !important;
         text-align: center;
         background-color: transparent;
         box-shadow: none;
@@ -1217,7 +1216,7 @@ body {
 
     /* AJUSTE ESPECÍFICO: Card do Churrasco (Large) */
     .gallery-card.large .gallery-image {
-        height: 350px !important;
+        height: auto !important;
         min-height: 350px !important; /* O pulo do gato para iOS */
         flex-shrink: 0;
     }
