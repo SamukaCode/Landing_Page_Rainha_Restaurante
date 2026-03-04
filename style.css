@@ -386,22 +386,33 @@ body {
     z-index: 2;
 }
 
-.history-year {
+.history-year-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza se necessário, ou mantenha flex-start */
+    text-align: center;
+}
+
+.year-label {
     font-family: 'Zizo', sans-serif;
     font-size: 5.2rem;
     color: #233f47;
-    line-height: 0.8;
+    line-height: 1; /* Aumentado levemente para não cortar no iOS */
+    text-transform: uppercase;
 }
 
-.history-year span {
+.year-number {
+    font-family: 'Zizo', sans-serif; /* Garante a mesma fonte */
     font-size: 8rem;
-    display: block;
-    margin-top: 10px !important;
+    font-weight: bold;
+    line-height: 1;
+    
+    /* Gradiente */
     background: linear-gradient(135deg, #233f47 0%, #345e69 50%, #233f47 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-weight: bold;
+    color: #233f47; /* Fallback para navegadores antigos */
 }
 
 .history-main-text {
@@ -985,11 +996,11 @@ body {
         display: block;
     }
 
-    .history-year {
+    .year-label {
         font-size: 4rem;
     }
 
-    .history-year span {
+    .year-number {
         font-size: 4rem;
     }
 
@@ -1235,11 +1246,11 @@ body {
         height: 200px;
     }
 
-    .history-year {
+    .year-label {
         font-size: 4rem;
     }
 
-    .history-year span {
+    .year-number {
         font-size: 4rem;
     }
 
@@ -1364,10 +1375,6 @@ body {
 @media (max-width: 480px) {
     .section-title {
         font-size: 2.2rem;
-    }
-
-    .history-year span {
-        font-size: 3.5rem;
     }
 
     .name-badge {
