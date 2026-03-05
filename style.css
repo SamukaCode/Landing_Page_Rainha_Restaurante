@@ -542,7 +542,7 @@ body {
     font-size: 1.1rem;
 }
 
-.elfsight-container {
+.widget-container {
     margin-bottom: 60px;
     background: #f8f9fa;
     padding: 20px;
@@ -1409,4 +1409,9 @@ body {
         bottom: 0;
         display: inline-block;
     }
+}
+
+/* Esconde as estrelas do cabeçalho do widget Trustindex */
+.ti-header .ti-stars {
+    display: none !important;
 }
