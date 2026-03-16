@@ -647,6 +647,7 @@ body {
 
 .review-info {
     flex: 1;
+    padding-right: 35px;
 }
 
 .review-author {
@@ -687,6 +688,7 @@ body {
     line-height: 1.5;
     display: -webkit-box;
     -webkit-line-clamp: 6;
+    line-clamp: 6;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
