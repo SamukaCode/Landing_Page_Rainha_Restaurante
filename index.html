@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <link rel="icon" type="image/x-icon" href="assets/favicon/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Rainha Restaurante - Tradição familiar desde 1999. Buffet completo, churrasco e gastronomia autêntica em Rio Claro - SP. Aberto todos os dias.">
+    <meta name="description" content="Saboreie a melhor comida caseira de Rio Claro no Rainha Restaurante. Buffet completo com churrasco, pratos típicos e tradição desde 1999. Aberto todos os dias!">
     <meta name="keywords" content="restaurante, buffet, churrasco, Rio Claro, gastronomia, comida caseira">
     <meta property="og:title" content="Rainha Restaurante - Desde 1999">
     <meta property="og:description" content="Tradição familiar desde 1999. Buffet completo e gastronomia autêntica.">
@@ -192,8 +192,33 @@
                 <h2 class="cta-buttons-title">O QUE DIZEM NOSSOS CLIENTES</h2>
                 <p class="reviews-subtitle">Sua satisfação é a nossa maior tradição.</p>
             </div>
-            <div class="widget-container" data-aos="zoom-in" data-aos-delay="400">
-                <script defer async src='https://cdn.trustindex.io/loader.js?501ad7166dcf8628b69634dc6e5'></script>
+            <div class="reviews-widget-container" data-aos="zoom-in" data-aos-delay="400">
+        <div class="carousel-header">
+            <h2>EXCELENTE</h2>
+            <div class="rating-summary">Com base em <a href="https://www.google.com/search?hl=pt-BR&gl=br&q=Rainha+Restaurante+-+R.+6,+1253+-+Centro,+Rio+Claro+-+SP,+13500-190&ludocid=3518767189739288342&lsig=AB86z5UdAZwTH6-FbFsZrEu3zL7G#lrd=0x94c7da5c6cf1547f:0x30d52c1da7b5b716,3" target="_blank"><span>+ de 700 avaliações</span></a></div>
+            <div class="google-logo-header">
+                <img src="https://cdn.trustindex.io/assets/platform/Google/logo.svg" alt="Google Logo">
+            </div>
+        </div>
+
+        <div class="reviews-container" id="container">
+            <button class="nav-button prev" id="prevBtn">
+                <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+
+            <div class="reviews-slider" id="slider">
+                <!-- Reviews will be injected by JavaScript -->
+            </div>
+
+            <button class="nav-button next" id="nextBtn">
+                <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+
+            <div class="progress-bar" id="progressBar">
+                <!-- Dots will be injected here -->
+            </div>
+        </div>
+    </div>
             </div>
             <div class="cta-buttons-grid">
                 <a href="https://www.google.com/maps/place/Rainha+Restaurante/@-22.4094039,-47.5632669,3a,75y,90t/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgID29KvLjAE!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAFfmt2YTubj8gMLAlJTffXh2d3JwkB3qK5-fOYwneR1AZrNQRm0SmpaCKxHfqUvvSwAaEi-3_G_7inHsJoODpJUsbl9vxWp2JTMXy0dO951slT2F562WSQ-YcMb9C8hYww4ZTqqVrXS_Zw%3Dw900-h600-k-no-pi0-ya10-ro0-fo100!7i6912!8i3456!4m17!1m7!3m6!1s0x94c7da5c6cf1547f:0x30d52c1da7b5b716!2sRainha+Restaurante!8m2!3d-22.409426!4d-47.5634019!16s%2Fg%2F1tf7t7dq!3m8!1s0x94c7da5c6cf1547f:0x30d52c1da7b5b716!8m2!3d-22.409426!4d-47.5634019!10e5!14m1!1BCgIgARICCAI!16s%2Fg%2F1tf7t7dq?entry=ttu&g_ep=EgoyMDI2MDMwMS4xIKXMDSoASAFQAw%3D%3D"
@@ -283,13 +308,14 @@
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
+    <script src="assets/js/reviews.js"></script>
     <script>
         // Inicialização do AOS
           AOS.init({
-            duration: 1000, 
-            once: true,     
+            duration: 1000,
+            once: true,
           });
-        
+
           // Lógica para atualizar o ano automaticamente
           document.getElementById("year").textContent = new Date().getFullYear();
     </script>
