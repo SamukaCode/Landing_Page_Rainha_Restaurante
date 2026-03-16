@@ -583,14 +583,19 @@ body {
     width: auto;
 }
 
+.reviews-navigation-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 60px; /* Space for buttons */
+}
+
 .reviews-container {
     position: relative;
     overflow: hidden;
     cursor: grab;
-}
-
-.reviews-container:active {
-    cursor: grabbing;
+    flex: 1;
 }
 
 .reviews-slider {
@@ -725,8 +730,8 @@ body {
     background: rgba(0, 0, 0, 0.1);
 }
 
-.nav-button.prev { left: 5px; }
-.nav-button.next { right: 5px; }
+.nav-button.prev { left: 0; }
+.nav-button.next { right: 0; }
 
 .nav-button svg {
     width: 24px;
@@ -765,12 +770,16 @@ body {
     .carousel-header h2 { font-size: 1.1rem; }
     .google-brand { font-size: 1.6rem; margin-bottom: 10px; }
     
+    .reviews-navigation-wrapper {
+        padding: 0 55px; /* Aumentado de 40px para 55px */
+    }
+
     .reviews-container { 
-        padding: 0 50px; /* Space for buttons on the sides */
+        padding: 0;
     }
 
     .review-card {
-        flex: 0 0 100%; /* Take full available space in the track */
+        flex: 0 0 100%;
         min-width: 100%;
         max-width: 100%;
         margin: 0;
@@ -783,13 +792,13 @@ body {
     }
 
     .nav-button { 
-        width: 32px; 
-        height: 32px; 
-        opacity: 0.8;
+        width: 36px; 
+        height: 36px; 
+        opacity: 0.9;
         background: rgba(255, 255, 255, 0.9);
     }
-    .nav-button.prev { left: 10px; }
-    .nav-button.next { right: 10px; }
+    .nav-button.prev { left: 8px; } /* Adicionado offset de 8px */
+    .nav-button.next { right: 8px; } /* Adicionado offset de 8px */
     
     .progress-bar { margin-top: 20px; }
     .progress-dot { width: 12px; height: 3px; }
